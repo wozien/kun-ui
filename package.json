@@ -17,13 +17,6 @@
     "doc:build": "vitepress build docs",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "pnpm test:run"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx,vue}": [
       "pnpm lint"
