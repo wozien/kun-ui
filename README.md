@@ -12,11 +12,11 @@
 使用 `pnpm` 安装
 
 ```bash
-pnpm add kun-ui --save-dev
+pnpm add @wozien/kun-ui --save-dev
 ```
 
 使用 `yarn` 安装
 
 ```bash
-yarn add kun-ui --save-dev
+yarn add @wozien/kun-ui --save-dev
 ```
