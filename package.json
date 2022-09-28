@@ -13,6 +13,7 @@
   "repository": {
     "url": "https://github.com/wozien/kun-ui"
   },
+  "homepage": "https://kun-ui-docs.vercel.app/",
   "license": "MIT",
   "files": [
     "dist"
@@ -60,10 +61,11 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "sass": "^1.55.0",
     "typescript": "^4.8.3",
     "unocss": "^0.45.22",
-    "vite": "3.0.9",
-    "vitepress": "0.22.4",
+    "vite": "^3.0.9",
+    "vitepress": "1.0.0-alpha.8",
     "vitepress-theme-demoblock": "1.4.2",
     "vitest": "0.21.1"
   },

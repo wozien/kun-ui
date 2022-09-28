@@ -1,22 +1,29 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: '🔨  Kun-UI',
+  title: '🐔 Kun-UI',
   description: '基于Vite全家桶开发组件',
   themeConfig: {
+    socialLinks: [
+      { icon: "github", link: "https://github.com/wozien/kun-ui" },
+    ],
+    nav: [
+      { text: "首页", link: "/" },
+      { text: "起步", link: "/guide/", activeMatch: "/guide/" },
+      { text: "组件", link: "/components/button/", activeMatch: "/components/" },
+    ],
     sidebar: {
-      "/": [
-        { text: '快速开始', link: '/' },
+      "/components/": [
         {
           text: '通用',
-          children: [
+          items: [
             { text: 'Button 按钮', link: '/components/button/' }
           ]
         },
-        { text: '导航' },
-        { text: '反馈' },
-        { text: '数据录入' },
-        { text: '输入展示' }
+        // { text: '导航' },
+        // { text: '反馈' },
+        // { text: '数据录入' },
+        // { text: '输入展示' }
       ]
     }
   },
@@ -24,7 +31,9 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       const { demoBlockPlugin } = require('vitepress-theme-demoblock');
-      md.use(demoBlockPlugin);
+      md.use(demoBlockPlugin, {
+        cssPreprocessor: "sass"
+      });
     }
   }
 });
