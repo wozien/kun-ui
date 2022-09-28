@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     environment: npm
     steps: 
       - uses: actions/checkout@v2
