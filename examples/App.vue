@@ -8,11 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { KunButton } from "@/index";
 
 export default defineComponent({
-  components: {
-    KunButton,
-  },
 });
 </script>

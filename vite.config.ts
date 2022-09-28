@@ -1,9 +1,9 @@
 /// <reference types="vitest" />
+
 import { defineConfig } from "vite";
 import path from "path";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import Unocss from "./build/unocss.config";
+import { plugins } from './build/vitePlugins';
+import { rollupOptions } from './build/rollupOptions';
 
 export default defineConfig(({ mode }) => ({
   root: mode === "development" ? "./examples" : ".",
@@ -13,31 +13,18 @@ export default defineConfig(({ mode }) => ({
     },
   },
 
-  plugins: [
-    vue(),
-    vueJsx(),
-    // unocss
-    Unocss(),
-  ],
+  plugins,
 
   build: {
     minify: "esbuild",
     cssCodeSplit: true,
-    sourcemap: false,
     lib: {
       entry: "./src/index.ts",
       name: "KunUI",
       fileName: "kun-ui",
-      formats: ["es", "umd", "iife"],
+      formats: ["es", "umd"],
     },
-    rollupOptions: {
-      external: ["vue", "vue-router"],
-      output: {
-        globals: {
-          vue: "vue",
-        },
-      },
-    },
+    rollupOptions
   },
 
   test: {

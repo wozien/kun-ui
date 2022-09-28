@@ -2,9 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+      - main
 
 jobs:
   Lint:
@@ -13,11 +14,14 @@ jobs:
     # 任务步骤
     steps:
       - uses: actions/checkout@v2
+
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: 7.2.1
+
       - name: Install package
         run: pnpm install
+
       - name: Run lint
         run: pnpm run lint
 
@@ -27,11 +31,14 @@ jobs:
     # 任务步骤
     steps:
       - uses: actions/checkout@v2
+
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: 7.2.1
+
       - name: Install package
         run: pnpm install
+        
       - name: Run test
         run: pnpm run test:run
 

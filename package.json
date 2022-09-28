@@ -22,7 +22,9 @@
   },
   "scripts": {
     "dev": "vite --force",
-    "build": "vite build",
+    "build": "pnpm build:all && pnpm build:components",
+    "build:all": "vite build",
+    "build:components": "esno ./build/buildComponent.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "lint": "eslint --fix --ext .ts,.tsx,.vue src",
@@ -53,6 +55,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.5.1",
+    "esno": "^0.16.3",
     "happy-dom": "6.0.4",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
