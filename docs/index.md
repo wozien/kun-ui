@@ -8,7 +8,7 @@ hero:
   name: KUN-UI
   text: 定制化个人UI组件库
   image:
-    src: /logo.png
+    src: /banner.png
     alt: Vite
   actions:
   - theme: brand
