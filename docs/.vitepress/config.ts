@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: '🐔 Kun-UI',
+  title: 'Kun-UI',
   description: '基于Vite全家桶开发组件',
   themeConfig: {
+    logo: '/logo.png',
     socialLinks: [
       { icon: "github", link: "https://github.com/wozien/kun-ui" },
     ],
