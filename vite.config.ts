@@ -36,5 +36,8 @@ export default defineConfig(({ mode }) => ({
     transformMode: {
       web: [/.[tj]sx$/],
     },
+    coverage: {
+      reporter: ["json"]
+    }
   },
 }));
