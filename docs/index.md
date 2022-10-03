@@ -2,14 +2,14 @@
 layout: home
 
 title: Kun-UI
-titleTemplate: 对现有UI组件库的补充
+titleTemplate: 基于Vite生态组件
 
 hero:
   name: KUN-UI
-  text: 定制化个人UI组件库
+  text: 基于Vite生态组件
   image:
     src: /banner.png
-    alt: Vite
+    alt: kun-ui-logo
   actions:
   - theme: brand
     text: 开始探索
