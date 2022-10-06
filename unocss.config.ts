@@ -1,5 +1,9 @@
-import { presetUno, presetAttributify, presetIcons } from 'unocss';
-import Unocss from 'unocss/vite';
+import { 
+  defineConfig,
+  presetUno, 
+  presetAttributify, 
+  presetIcons 
+} from 'unocss';
 
 const colors = [
   'blue',
@@ -24,8 +28,7 @@ const safelist = [
   ...icons.map(v => `i-ic-baseline-${v}`)
 ];
 
-export default () => 
-  Unocss({
-    safelist,
-    presets: [presetUno(), presetAttributify(), presetIcons()]
-  })
+export default defineConfig({
+  safelist,
+  presets: [presetUno(), presetAttributify(), presetIcons()]
+});

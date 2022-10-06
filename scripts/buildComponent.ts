@@ -1,18 +1,31 @@
 import path from 'path';
 import fs from "fs";
 import { build, UserConfig } from 'vite';
-import { plugins } from './vitePlugins';
-import { rollupOptions } from './rollupOptions';
+import VueJsx from '@vitejs/plugin-vue-jsx';
+import Unocss from 'unocss/vite';
 
 const srcDir = path.resolve(__dirname, '../src');
 const outDir = path.resolve(__dirname, '../dist');
 
 const config: UserConfig = {
-  plugins,
+  plugins: [
+    VueJsx(),
+    Unocss()
+  ],
+
   build: {
     minify: "esbuild",
     cssCodeSplit: true,
-    rollupOptions
+    rollupOptions: {
+      external: ["vue"],
+      output: {
+        globals: {
+          vue: "vue",
+        },
+        assetFileNames: "style.css",
+        exports: 'named'
+      }
+    }
   }
 };
 

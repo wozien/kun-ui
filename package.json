@@ -23,9 +23,9 @@
   },
   "scripts": {
     "dev": "vite --force",
-    "build": "pnpm build:all && pnpm build:components",
+    "build": "pnpm build:all && pnpm build:comp",
     "build:all": "vite build",
-    "build:components": "esno ./build/buildComponent.ts",
+    "build:comp": "esno ./scripts/buildComponent.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "coverage": "vitest run --coverage",

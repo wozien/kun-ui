@@ -2,8 +2,9 @@
 
 import { defineConfig } from "vite";
 import path from "path";
-import { plugins } from './build/vitePlugins';
-import { rollupOptions } from './build/rollupOptions';
+import Vue from "@vitejs/plugin-vue";
+import VueJsx from "@vitejs/plugin-vue-jsx";
+import Unocss from 'unocss/vite';
 
 export default defineConfig(({ mode }) => ({
   root: mode === "development" ? "./examples" : ".",
@@ -13,7 +14,11 @@ export default defineConfig(({ mode }) => ({
     },
   },
 
-  plugins,
+  plugins: [
+    Vue(),
+    VueJsx(),
+    Unocss()
+  ],
 
   build: {
     minify: "esbuild",
@@ -24,7 +29,16 @@ export default defineConfig(({ mode }) => ({
       fileName: "kun-ui",
       formats: ["es", "umd"],
     },
-    rollupOptions
+    rollupOptions: {
+      external: ["vue"],
+      output: {
+        globals: {
+          vue: "vue",
+        },
+        assetFileNames: "style.css",
+        exports: 'named'
+      }
+    }
   },
 
   test: {
