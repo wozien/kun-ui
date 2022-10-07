@@ -54,4 +54,8 @@ export default defineConfig(({ mode }) => ({
       reporter: ["json"]
     }
   },
+
+  server: {
+    port: 8000
+  }
 }));
